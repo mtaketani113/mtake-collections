@@ -3,6 +3,9 @@ package com.mtaketani.collections;
 import java.util.ArrayList;
 import java.util.function.Predicate;
 
+/**
+ * MyList impl
+ */
 public class MyArrayList<E> extends ArrayList<E> implements MyList<E> {
 
     /**

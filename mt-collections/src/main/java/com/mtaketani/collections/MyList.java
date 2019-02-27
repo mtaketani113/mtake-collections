@@ -3,6 +3,9 @@ package com.mtaketani.collections;
 import java.util.List;
 import java.util.function.Predicate;
 
+/**
+ * MyList
+ */
 public interface MyList<E> extends List<E> {
 
     /**
