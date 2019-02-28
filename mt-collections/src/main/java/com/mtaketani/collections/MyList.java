@@ -3,6 +3,18 @@ package com.mtaketani.collections;
 import java.util.List;
 import java.util.function.Predicate;
 
+/**
+ *
+ * Extension of java.util.List.
+ *
+ * <p>
+ * extends List
+ * </p>
+ *
+ * @author $Author$
+ * @version $Revision$
+ * @param <E>
+ */
 public interface MyList<E> extends List<E> {
 
     /**

@@ -2,7 +2,20 @@ package com.mtaketani.collections;
 
 import java.util.ArrayList;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
+/**
+ *
+ * Implementation class of MyList.
+ *
+ * <p>
+ * extend ArrayList
+ * </p>
+ *
+ * @author $Author$
+ * @version $Revision$
+ * @param <E>
+ */
 public class MyArrayList<E> extends ArrayList<E> implements MyList<E> {
 
     /**
@@ -13,10 +26,14 @@ public class MyArrayList<E> extends ArrayList<E> implements MyList<E> {
     @Override
     public MyList<E> exclude(Predicate<? super E> predicate) {
 
-        //行を削除
-        for(int i = 0; i < this.size(); i++) {
-            if(predicate.test(this.get(i))) this.remove(i);
+        if(predicate == null) {
+            throw new IllegalArgumentException("Args can't set null");
         }
-        return this;
+
+        //invert predicate
+        Predicate<E> checker = s ->  {return !predicate.test(s);};
+
+        return this.stream().filter(checker)
+                        .collect(Collectors.toCollection(MyArrayList::new));
     }
 }
