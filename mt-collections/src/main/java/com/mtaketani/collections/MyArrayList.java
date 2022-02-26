@@ -19,6 +19,11 @@ import java.util.stream.Collectors;
 public class MyArrayList<E> extends ArrayList<E> implements MyList<E> {
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = -2368861840856529128L;
+
+	/**
      * {@inheritDoc}
      *
      * @see com.mtaketani.collections.MyList#exclude(Predicate)
